@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}">
+{% endblock %}
+{% block body %}
+{% include 'menu.html.twig' %}
+
+<div class="card mb-3" style="width: auto;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="{{ asset('images/solar.png') }}" class="card-img" alt="">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Placas Fotovoltaicas</h5>
+        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipiscing, elit per ut facilisi blandit nullam in, nec vulputate neque suscipit feugiat. 
+    Vehicula nec class scelerisque sociis risus congue, purus ante condimentum diam platea suspendisse donec, maecenas nascetur velit ad integer. 
+    Orci pharetra elementum rhoncus felis scelerisque at cras vestibulum natoque facilisi tempor libero lacus, purus tellus iaculis urna massa praesent vel montes nibh laoreet commodo. 
+    Dignissim accumsan sodales lobortis consequat porttitor nisi quis, sed varius integer cubilia tellus cum vehicula.</p>
+      </div>
+    </div>
+  </div>
+</div>
+    
+<div class="card mb-3" style="width: auto;">
+  <div class="row no-gutters">
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Grnajas Solares</h5>
+        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipiscing, elit per ut facilisi blandit nullam in, nec vulputate neque suscipit feugiat. 
+    Vehicula nec class scelerisque sociis risus congue, purus ante condimentum diam platea suspendisse donec, maecenas nascetur velit ad integer. 
+    Orci pharetra elementum rhoncus felis scelerisque at cras vestibulum natoque facilisi tempor libero lacus, purus tellus iaculis urna massa praesent vel montes nibh laoreet commodo. 
+    Dignissim accumsan sodales lobortis consequat porttitor nisi quis, sed varius integer cubilia tellus cum vehicula.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <img src="{{ asset('images/solarpanel.jpg') }}" class="card-img" alt="">
+    </div>
+
+  </div>
+</div>
+<div class="card mb-3" style="width: auto;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="{{ asset('images/solarcasa.jpg') }}" class="card-img" alt="">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Abastecimiento del hogar</h5>
+        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipiscing, elit per ut facilisi blandit nullam in, nec vulputate neque suscipit feugiat. 
+    Vehicula nec class scelerisque sociis risus congue, purus ante condimentum diam platea suspendisse donec, maecenas nascetur velit ad integer. 
+    Orci pharetra elementum rhoncus felis scelerisque at cras vestibulum natoque facilisi tempor libero lacus, purus tellus iaculis urna massa praesent vel montes nibh laoreet commodo. 
+    Dignissim accumsan sodales lobortis consequat porttitor nisi quis, sed varius integer cubilia tellus cum vehicula.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/index.js') }}"></script>
+{% endblock %}

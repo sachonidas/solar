@@ -1,0 +1,15 @@
+{# empty Twig template #}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href={{ path('home') }}>Solar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link inicioTab" href={{ path('home') }}><i class="fas fa-home"></i> Inicio </a>
+      <a class="nav-item nav-link granjaTab" href="{{ path('granjas') }}"><i class="fas fa-solar-panel"></i> Granjas</a>
+      <a class="nav-item nav-link contactoTab" href="#"><i class="far fa-envelope"></i> Contacto</a>
+      {% if user is defined %}<a class="nav-item nav-link" href="#" aria-disabled="true"><i class="fas fa-user"></i> Login</a>{% else %}<a class="nav-item nav-link right" href="#" aria-disabled="true">{{ user.name }}</a>{% endif %}
+    </div>
+  </div>
+</nav>
