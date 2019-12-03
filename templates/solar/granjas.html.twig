@@ -1,4 +1,5 @@
 {% extends 'base.html.twig' %}
+{% block title %}Granjas{% endblock %}
 {% block head %}
     {{ parent() }}
     {#{% block title %} Granjas {% endblock %}#}
@@ -7,28 +8,27 @@
     <meta charset="utf-8">
     
     <link rel="stylesheet" href="{{ asset('css/granjas.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
     <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
     <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
     <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
     <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
-  <script type="text/javascript" src='../js-examples-rendering-helpers/iframe-height.js'></script>
+
  </head>
 {% endblock %}
 {% block body %}
-{% include 'menu.html.twig' %}
     <div id="menuLeft" class="card">
-            <ul class="list-group list-group-flush">
-            <li class="list-group-item">Madrid. Base Central</li>
-            <li class="list-group-item">Barcelona. Granja de Placas</li>
-            <li class="list-group-item">Extremadura. Granja de Placas</li>
-            <li class="list-group-item">Alicante. Central IT</li>
-        </ul>
+        <table class="table">
+            {% for local in locales %}
+                <tr class="">
+                    <td>{{ local.id }}. {{ local.nombre }}. {{ local.tipoLocal.descripcion }}</td><td> {% if is_granted('ROLE_ADMIN') %}<a href="{{ path('local_editar', {'id': local.id }) }}" class="btn btn-warning"><i class="far fa-edit"></i>Editar</a>{% endif %}</td>
+                </tr>
+            {% endfor %}
+        </table>
     </div>
     <div id="map" class="card"></div>
     <div class="divider">
     </div>
-</body>
-</html>
 {% endblock %}
 {% block javascripts %}
     {{ parent() }}

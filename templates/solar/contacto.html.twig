@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block title %}Contacto{% endblock %}
+{% block body %}
+    {% for flash_message in app.session.flashbag.get('success') %}
+        <div class="alert alert-success" role="alert">
+            {{ flash_message }}
+        </div>
+    {% endfor %}
+    {{ form_start(contacto) }}
+        {{ form_widget(contacto) }}
+    {{ form_end(contacto) }}
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

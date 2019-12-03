@@ -3,9 +3,32 @@ $(document).ready(function (){
 	$('.inicioTab').removeClass('active');
 });
 
- 
+var pamplonaMarker;
+var madridMarker;
+var barcelonaMarker;
+var alicanteMarker;
+var extremaduraMarker;
+var locales;
+var $link = document.getElementById('');
+
+/*$.ajax({
+    method: 'POST',
+    dataType: 'json',
+    url: '/data_locales'
+}).done(function (data) {
+   locales = data.locales;
+})
+console.log(locales);*/
+$.getJSON("/dataLocales", function (data) {
+    var items = [];
+    $.each(data, function (k, v) {
+        console.log(k +' : ' + v);
+    })
+});
+
+
 function addMarkersToMap(map) {
-    //var icon = new H.map.Icon("{{asset('images/panel-solar.png'}}");
+
     var pamplonaMarker = new H.map.Marker({lat:42.8184538, lng:-1.6442556});
     map.addObject(pamplonaMarker);
 
